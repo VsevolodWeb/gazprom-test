@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react'
+import {useDispatch} from 'react-redux'
+import { Route } from 'react-router-dom'
+import {appAPI} from './api/app-api'
+import {actions} from './store/app-reducer'
+import {Menu} from './components/Menu/Menu'
+import {Content} from './components/Content/Content'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const dispatch = useDispatch()
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await appAPI.getMenu()
+			dispatch(actions.setMenu(response))
+		}
+		fetchData()
+	}, [dispatch])
+
+	return <>
+		<Menu/>
+		<Route path="/:articleId">
+			<Content/>
+		</Route>
+	</>
 }
 
-export default App;
+export default App
