@@ -1510,6 +1510,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/classnames@^2.2.10":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.10.tgz#cc658ca319b6355399efc1f5b9e818f1a24bf999"
+  integrity sha512-1UzDldn9GfYYEsWWnn/P4wkTlkZDH7lDb0wBMGbtIQc9zXEQq7FlKBdZUn6OBqD8sKZZ2RQO2mAjGpXiDGoRmQ==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -2896,9 +2901,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001035:
-  version "1.0.30001035"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001035.tgz#2bb53b8aa4716b2ed08e088d4dc816a5fe089a1e"
-  integrity sha512-C1ZxgkuA4/bUEdMbU5WrGY4+UhMFFiXrgNAfxiMIqWgFTWfv/xsZCS2xEHT2LMq7xAZfuAnu6mcqyDl0ZR6wLQ==
+  version "1.0.30001129"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001129.tgz"
+  integrity sha512-9945fTVKS810DZITpsAbuhQG7Lam0tEfVbZlsBaCFZaszepbryrArS05PWmJSBQ6mta+v9iz0pUIAbW1eBILIg==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -8970,6 +8975,11 @@ react-app-polyfill@^1.0.6:
     raf "^3.4.1"
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
+
+react-column-resizer@^1.1.9:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/react-column-resizer/-/react-column-resizer-1.1.9.tgz#b3e591003d1373ae9a9f85ef9d855813743773dd"
+  integrity sha512-l25LPyN3Gu33RC726cv3ZnS9EaI/B+ZIY1MrJiiHcBqsY4BKRYNBbrZolUfzBjjWDwHOBMc/fZLiSxmDGPqCrQ==
 
 react-dev-utils@^10.2.1:
   version "10.2.1"

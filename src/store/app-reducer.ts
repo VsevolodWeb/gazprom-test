@@ -3,16 +3,13 @@ import {InferActionsTypes} from './store'
 
 export type AppInitialStateType = {
 	menu: MenuType[]
-	currentMenuItem: {
-		name: string
-		text: string | MenuItemTextType
-	}
+	currentMenuItem: CurrentMenuItemType
 }
 export type MenuType = {
 	name: string
-	items: DataItemType[]
+	items: MenuItemType[]
 }
-type DataItemType = {
+type MenuItemType = {
 	id: string
 	name: string
 }
@@ -22,6 +19,10 @@ type MenuItemTextType = {
 }
 type DataItemTextValuesType = {
 	[key: string]: string
+}
+export type CurrentMenuItemType = {
+	name: string
+	text: string | MenuItemTextType
 }
 
 type ActionsTypes = InferActionsTypes<typeof actions>
@@ -37,8 +38,11 @@ const initialState: AppInitialStateType = {
 
 const appReducer = (state = initialState, action: ActionsTypes): AppInitialStateType => {
 	switch (action.type) {
-		case 'app/GET_MENU': {
+		case 'app/SET_MENU': {
 			return {...state, menu: action.menu}
+		}
+		case 'app/SET_MENU_ITEM': {
+			return {...state, currentMenuItem: action.currentMenuItem}
 		}
 		default: {
 			return state
@@ -48,8 +52,8 @@ const appReducer = (state = initialState, action: ActionsTypes): AppInitialState
 
 
 export const actions = {
-	setMenu: (menu: MenuType[]) => ({type: 'app/GET_MENU', menu} as const),
-	setMenuItemText: (menu: MenuType[]) => ({type: 'app/GET_MENU', menu} as const)
+	setMenu: (menu: MenuType[]) => ({type: 'app/SET_MENU', menu} as const),
+	setMenuItem: (currentMenuItem: CurrentMenuItemType) => ({type: 'app/SET_MENU_ITEM', currentMenuItem} as const)
 }
 
 

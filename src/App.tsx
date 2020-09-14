@@ -1,29 +1,28 @@
-import React, {useEffect} from 'react'
-import {useDispatch} from 'react-redux'
-import { Route } from 'react-router-dom'
-import {appAPI} from './api/app-api'
-import {actions} from './store/app-reducer'
+import React from 'react'
+import {Route} from 'react-router-dom'
+import ColumnResizer from 'react-column-resizer'
 import {Menu} from './components/Menu/Menu'
 import {Content} from './components/Content/Content'
 
 
 function App() {
-	const dispatch = useDispatch()
-
-	useEffect(() => {
-		const fetchData = async () => {
-			const response = await appAPI.getMenu()
-			dispatch(actions.setMenu(response))
-		}
-		fetchData()
-	}, [dispatch])
-
-	return <>
-		<Menu/>
-		<Route path="/:articleId">
-			<Content/>
-		</Route>
-	</>
+	return (
+		<table className="container">
+			<tbody>
+			<tr>
+				<td className="container__sidebar">
+					<Menu/>
+				</td>
+				<ColumnResizer className="container__resizer"/>
+				<td className="container__content">
+					<Route path="/:articleId">
+						<Content/>
+					</Route>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	)
 }
 
 export default App
