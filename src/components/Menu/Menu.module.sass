@@ -8,3 +8,55 @@
 
 	&__header
 		margin-bottom: auto
+
+.menuList
+	display: flex
+	flex-flow: column
+	justify-content: flex-end
+	margin-top: 0
+	height: 100%
+
+	&, &__subMenu
+		padding-left: 0
+		margin-bottom: 0
+
+	&__subMenu
+		margin-top: 15px
+
+	&__item
+		.menuList__title::after
+			content: '+'
+			margin-left: auto
+			font:
+				size: 30px
+				weight: bold
+			color: var(--accent-color)
+
+		&_active
+			margin-bottom: auto
+
+			.menuList__title::after
+				content: '-'
+
+	&__title
+		display: flex
+		align-items: center
+		background-color: #ececec
+		color: var(--body-font-color)
+		width: 100%
+
+	&__icon
+		width: 15px
+		margin-right: 10px
+		vertical-align: middle
+
+	&__link
+		display: block
+		color: var(--body-font-color)
+		text-decoration: none
+		padding: 2px 15px
+		border: 1px solid transparent
+
+		&:global(.active)
+			background-color: #ffefbb
+			border-color: var(--accent-color)

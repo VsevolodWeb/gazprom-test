@@ -14,13 +14,14 @@ type MenuItemType = {
 	name: string
 }
 type MenuItemTextType = {
-	headers: string[]
+	header: string[]
 	values: DataItemTextValuesType[]
 }
 type DataItemTextValuesType = {
 	[key: string]: string
 }
 export type CurrentMenuItemType = {
+	parentCategory: string
 	name: string
 	text: string | MenuItemTextType
 }
@@ -30,6 +31,7 @@ type ActionsTypes = InferActionsTypes<typeof actions>
 const initialState: AppInitialStateType = {
 	menu: [],
 	currentMenuItem: {
+		parentCategory: '',
 		name: '',
 		text: ''
 	}
